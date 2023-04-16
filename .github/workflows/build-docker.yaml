@@ -56,10 +56,11 @@ jobs:
           token: ${{ secrets.PAT }}
           ref: "master"
       - id: short-sha
-        uses: benjlevesque/short-sha@v1.2
+        name: Short sha
+        run: echo "sha=$(cut -c-7 <<<'${{ github.sha }}')" >> $GITHUB_OUTPUT
       - name: Replace the image tag
         env:
-          TAG: ${{ steps.short-sha.outputs.sha }}
+          TAG: sha-${{ steps.short-sha.outputs.sha }}
         run: yq -i e '(select(.kind=="Deployment" and .metadata.name==env(DEPLOYMENT)) | .spec.template.spec.containers.[].image) |= split(":").0 + ":" + env(TAG)' $YAMLPATH
       - name: Commit and push
         uses: stefanzweifel/git-auto-commit-action@v4
