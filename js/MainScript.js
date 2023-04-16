@@ -95,7 +95,7 @@ function setInformation(){
 }
 
 function setMainBackground(){
-  getElement('background-image').style.backgroundImage = 'url(https://picsum.photos/1920/1080/?random';
+  getElement('background-image').style.backgroundImage = 'url(https://source.unsplash.com/random/1920x1080?colorado';
 }
 
 function checkStormMusic(){
