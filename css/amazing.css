@@ -16,7 +16,7 @@
   opacity: 0;
   position: relative;
   overflow: hidden;
-  transform: translateY(-50%);
+  transform: translateY(-40%);
   transition: width 300ms 500ms linear, opacity 300ms 500ms;
 }
 
