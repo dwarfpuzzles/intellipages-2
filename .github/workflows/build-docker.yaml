@@ -13,7 +13,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/qconrad/intellistar-emulator
+            ghcr.io/rmitchellscott/intellistar-emulator
           tags: |
             type=raw,priority=1000,value=latest,enable=${{ github.ref == 'refs/heads/master' }}
             type=ref,event=branch
